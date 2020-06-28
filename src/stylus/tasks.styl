@@ -1,0 +1,44 @@
+.tasks
+  margin 2em 0
+  &-container
+    overflow auto
+    min-height calc(100vh - 463px)
+    &.is-empty
+      display flex
+      justify-content center
+      align-items center
+  &-item
+    &:first-child
+      margin-top 0
+    &:last-child
+      margin-bottom 0
+    margin .5em 0
+    padding 1em .7em
+    display flex
+    justify-content space-between
+    border-radius .5em
+    &.is-red
+      background var(--red)
+      color var(--ligthCyan)
+    &.is-amber
+      background var(--amber)
+      color var(--ligthCyan)
+    &.is-green
+      background var(--green)
+      color var(--ligthCyan)
+  &-info
+    width 100%
+    display flex
+    margin-right 1em
+    align-items center
+    justify-content space-between
+  &-name
+    margin-top 0 !important
+    display block
+  &-label
+    display block
+  &-finish-label
+    display block
+  &-finish-timer
+    margin-top 0 !important
+    display block

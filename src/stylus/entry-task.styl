@@ -1,0 +1,30 @@
+@import './colors.styl'
+
+.entry-task
+  &-control
+    display flex
+  &-label
+    margin .7em 0 .2em
+    display block
+    font-size 20px
+  &-input
+    margin-right 1.2em
+    padding .1em .5em
+    font-size 18px
+    flex-grow 1
+    border-radius .5em
+    border none
+    box-shadow 0 5px 10px -5px var(--softBlue)
+    transition .3s all
+    &:focus
+      outline none
+  &-error
+    visibility hidden
+    color var(--red)
+    font-size 17px
+    font-weight 500
+    letter-spacing 1px
+    margin-left .5em
+  &-dates
+    button
+      padding 1em 3em

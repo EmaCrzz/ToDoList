@@ -1,0 +1,27 @@
+.colors
+  display flex
+  flex-grow 1
+  margin-bottom .7em
+  &-option
+    height 50px
+    width 50px
+    margin-top: .7em
+    margin-right 2em
+    border-radius .5em
+    transition .3s all
+    &:hover
+      cursor pointer
+    &.is-red
+      color var(--red)
+      background var(--red)
+      box-shadow 0 5px 10px -5px currentColor
+    &.is-amber
+      color var(--amber)
+      background var(--amber)
+      box-shadow 0 5px 10px -5px currentColor
+    &.is-green
+      color var(--green)
+      background var(--green)
+      box-shadow 0 5px 10px -5px currentColor
+    &.is-selected
+      border 2px solid var(--softBlue)
