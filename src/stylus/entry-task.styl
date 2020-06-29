@@ -1,6 +1,8 @@
 @import './colors.styl'
 
 .entry-task
+  label, small
+    display block
   &-control
     display flex
   &-label
@@ -20,12 +22,10 @@
     &:focus
       outline none
   &-error
-    visibility hidden
+    // visibility hidden
     color var(--red)
     font-size .8em
     font-weight 500
     letter-spacing 1px
     margin-left .5em
-  &-dates
-    button
-      padding 1em 3em
+      

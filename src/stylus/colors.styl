@@ -2,15 +2,35 @@
   display flex
   flex-grow 1
   margin-bottom .7em
+  &-options
+    display flex
+  input[type="radio"]
+    display none
+  input[id="red"]:checked
+    & ~ div [for="red"]
+      border 1px solid var(--softBlue)
+      transform scale(.85)
+  input[id="amber"]:checked
+    & ~ div [for="amber"]
+      border 1px solid var(--softBlue)
+      transform scale(.85)
+  input[id="green"]:checked
+    & ~ div [for="green"]
+      border 1px solid var(--softBlue)
+      transform scale(.85)
   &-option
     height 50px
     width 50px
-    margin-top: .7em
     margin-right 2em
     border-radius .5em
-    transition .3s all
+    transition .1s all
     &:hover
       cursor pointer
+    &:active
+    &:hover
+      opacity .8
+    &:active
+      transform scale(.9)
     &.is-red
       color var(--red)
       background var(--red)
@@ -24,4 +44,5 @@
       background var(--green)
       box-shadow 0 5px 10px -5px currentColor
     &.is-selected
-      border 2px solid var(--softBlue)
+      border 1px solid var(--softBlue)
+      transform scale(.85)

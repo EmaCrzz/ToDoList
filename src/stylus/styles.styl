@@ -16,7 +16,7 @@ body
   font-family 'Rubik', sans-serif
   background var(--veryDarkBlue)
   color var(--ligthCyan)
-  font-size 16px
+  font-size 12px
   letter-spacing 1px
 
 .u-h1
@@ -45,6 +45,10 @@ body
   color var(--grayishBlue)
   line-height: 1.8
   font-size .9em
+ul
+  padding: 0
+  list-style none
+  margin 0
 
 a
   color var(--grayishBlue)
@@ -53,6 +57,7 @@ a
     color var(--ligthCyan)
 
 .u-wrapper
+  min-width: 290px
   max-width 1280px
   margin auto
   padding 0 1em
@@ -65,7 +70,7 @@ a
 .u-button
   background var(--softBlue)
   color white
-  padding 1em 1em
+  padding 1em
   font-size .9em
   font-weight 600
   border-radius .5em
@@ -96,7 +101,12 @@ a
     justify-content center
     align-items center
     img
-      width 25px
+      width 20px
+  &.is-small
+    img
+      width 1.2em
+  &.is-large
+    padding 1em 3em
   &:focus
     outline none
   &:active

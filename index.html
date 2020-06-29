@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,46 +10,43 @@
 
   <title>To-Do List</title>
 </head>
+
 <body>
-  <section class="header">
+  <header class="header">
     <div class="u-wrapper">
       <h1 class="u-h3">To-Do List by <a href="https://github.com/EmaCrzz/" target="_blank">EmaCrzz</a></h1>
     </div>
-  </section>
+  </header>
 
   <section class="entry-task">
     <form action="" class="u-wrapper-md">
       <label for="input-task" class="entry-task-label">Insert task name</label>
-      <div class="entry-task-control">
-        <input type="text" id="input-task" class="entry-task-input" placeholder="Required field">
-        <div class="entry-task-dates">
-          <button class="u-button with-icon">
-            <img src="./static/icons/calendario.svg" alt="">
-          </button>
-        </div>
-      </div>
+      <input type="text" id="input-task" class="entry-task-input" placeholder="Required field">
       <small id="error" class="entry-task-error">This field is required</small>
-      <label for="" class="entry-task-label">Select a color</label>
-      <div class="entry-task-control">
-        <div class="colors">
-          <div class="colors-option is-red is-selected"></div>
-          <div class="colors-option is-amber"></div>
-          <div class="colors-option is-green"></div>
+      <input type="datetime-local" class="entry-task-input" id="birthdaytime" name="birthdaytime">
+      <small id="error" class="entry-task-error">This field is required</small>
+      <span class="entry-task-label">Select a color</span>
+      <div class="colors">
+        <input type="radio" name="color" value="red" id="red">
+        <input type="radio" name="color" value="amber" id="amber">
+        <input type="radio" name="color" value="green" id="green">
+        <div class="colors-options">
+          <label for="red" class="colors-option is-red"></label>
+          <label for="amber" class="colors-option is-amber"></label>
+          <label for="green" class="colors-option is-green"></label>
         </div>
       </div>
       <button class="u-button with-icon is-fullWidth">
-        <img src="./static/icons/anadir.svg" alt="add task">&nbsp;add
+        <img src="./static/icons/anadir.svg" alt="add task">&nbsp;&nbsp;&nbsp;add
       </button>
     </form>
   </section>
-  
-  <section class="tasks">
+
+  <main class="tasks is-hidden">
     <div class="u-wrapper-md">
-      <!-- <div id="tasks-container" class="tasks-container is-empty">
-        <span class="u-h4">Create a task</span>
-      </div> -->
-      <div id="tasks-container" class="tasks-container">
-        <div class="tasks-item is-red">
+      <ul class="tasks-container">
+        <!-- <span class="u-h4">Create a task</span> -->
+        <li class="tasks-item is-red">
           <div class="tasks-info">
             <div>
               <span class="tasks-name u-h5">Learning HTML</span>
@@ -59,11 +57,11 @@
               <span class="tasks-finish-timer u-h5">5:06:08 15:12</span>
             </div>
           </div>
-          <button class="u-button with-icon is-outlined">
+          <button class="u-button with-icon is-outlined is-small">
             <img src="./static/icons/cerrar.svg" alt="">
           </button>
-        </div>
-        <div class="tasks-item is-green">
+        </li>
+        <li class="tasks-item is-green">
           <div class="tasks-info">
             <div>
               <span class="tasks-name u-h5">Learning CSS</span>
@@ -74,11 +72,11 @@
               <span class="tasks-finish-timer u-h5">5:06:08 15:12</span>
             </div>
           </div>
-          <button class="u-button with-icon is-outlined">
+          <button class="u-button with-icon is-outlined is-small">
             <img src="./static/icons/cerrar.svg" alt="">
           </button>
-        </div>
-        <div class="tasks-item is-amber">
+        </li>
+        <li class="tasks-item is-amber">
           <div class="tasks-info">
             <div>
               <span class="tasks-name u-h5">Learning JS</span>
@@ -89,11 +87,26 @@
               <span class="tasks-finish-timer u-h5">5:06:08 15:12</span>
             </div>
           </div>
-          <button class="u-button with-icon is-outlined">
+          <button class="u-button with-icon is-outlined is-small">
             <img src="./static/icons/cerrar.svg" alt="">
           </button>
-        </div>
-        <div class="tasks-item is-amber">
+        </li>
+        <li class="tasks-item is-red">
+          <div class="tasks-info">
+            <div>
+              <span class="tasks-name u-h5">Learning HTML</span>
+              <span class="tasks-created">Created 28/06/2020</span>
+            </div>
+            <div>
+              <span class="tasks-finish-label">Finish</span>
+              <span class="tasks-finish-timer u-h5">5:06:08 15:12</span>
+            </div>
+          </div>
+          <button class="u-button with-icon is-outlined is-small">
+            <img src="./static/icons/cerrar.svg" alt="">
+          </button>
+        </li>
+        <li class="tasks-item is-amber">
           <div class="tasks-info">
             <div>
               <span class="tasks-name u-h5">Learning JS</span>
@@ -104,21 +117,23 @@
               <span class="tasks-finish-timer u-h5">5:06:08 15:12</span>
             </div>
           </div>
-          <button class="u-button with-icon is-outlined">
+          <button class="u-button with-icon is-outlined is-small">
             <img src="./static/icons/cerrar.svg" alt="">
           </button>
-        </div>
-      </div>
+        </li>
+      </ul>
     </div>
-  </section>
+  </main>
 
   <footer class="footer is-hidden">
     <div class="u-wrapper">
-      Iconos diseñados por <a href="https://www.flaticon.es/autores/pixel-perfect" title="Pixel perfect">Pixel perfect</a>
+      Iconos diseñados por <a href="https://www.flaticon.es/autores/pixel-perfect" title="Pixel perfect">Pixel
+        perfect</a>
       from <a href="https://www.flaticon.es/" title="Flaticon"> www.flaticon.es</a>
       Iconos diseñados por <a href="https://www.flaticon.es/autores/becris" title="Becris">Becris</a> from <a
         href="https://www.flaticon.es/" title="Flaticon"> www.flaticon.es</a>
     </div>
   </footer>
 </body>
+
 </html>
