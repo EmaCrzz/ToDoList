@@ -34,20 +34,20 @@
   display: none;
 }
 .colors input[id="red"]:checked ~ div [for="red"] {
-  border: 1px solid var(--softBlue);
+  border: 2px solid var(--softBlue);
   transform: scale(0.85);
 }
 .colors input[id="amber"]:checked ~ div [for="amber"] {
-  border: 1px solid var(--softBlue);
+  border: 2px solid var(--softBlue);
   transform: scale(0.85);
 }
 .colors input[id="green"]:checked ~ div [for="green"] {
-  border: 1px solid var(--softBlue);
+  border: 2px solid var(--softBlue);
   transform: scale(0.85);
 }
 .colors-option {
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   margin-right: 2em;
   border-radius: 0.5em;
   transition: 0.1s all;
@@ -65,17 +65,14 @@
 .colors-option.is-red {
   color: var(--red);
   background: var(--red);
-  box-shadow: 0 5px 10px -5px currentColor;
 }
 .colors-option.is-amber {
   color: var(--amber);
   background: var(--amber);
-  box-shadow: 0 5px 10px -5px currentColor;
 }
 .colors-option.is-green {
   color: var(--green);
   background: var(--green);
-  box-shadow: 0 5px 10px -5px currentColor;
 }
 .colors-option.is-selected {
   border: 1px solid var(--softBlue);
@@ -94,25 +91,31 @@
   font-size: 1em;
 }
 .entry-task-input {
+  width: 100%;
+  box-sizing: border-box;
   margin-right: 1.2em;
   margin-bottom: 0.2em;
-  padding: 0.1em 0.5em;
+  padding: 1em 0.5em;
   font-size: 1em;
   flex-grow: 1;
   border-radius: 0.5em;
   border: none;
-  box-shadow: 0 5px 10px -5px var(--softBlue);
   transition: 0.3s all;
 }
 .entry-task-input:focus {
   outline: none;
 }
+.entry-task small {
+  visibility: hidden;
+}
 .entry-task-error {
+  visibility: visible !important;
   color: var(--red);
   font-size: 0.8em;
   font-weight: 500;
   letter-spacing: 1px;
   margin-left: 0.5em;
+  margin-bottom: 0.7em;
 }
 .tasks {
   margin: 1.2em 0;
@@ -134,6 +137,7 @@
   display: flex;
   justify-content: space-between;
   border-radius: 0.5em;
+  transition: 0.5s all;
 }
 .tasks-item:first-child {
   margin-top: 0;

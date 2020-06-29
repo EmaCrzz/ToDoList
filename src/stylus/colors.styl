@@ -8,19 +8,19 @@
     display none
   input[id="red"]:checked
     & ~ div [for="red"]
-      border 1px solid var(--softBlue)
+      border 2px solid var(--softBlue)
       transform scale(.85)
   input[id="amber"]:checked
     & ~ div [for="amber"]
-      border 1px solid var(--softBlue)
+      border 2px solid var(--softBlue)
       transform scale(.85)
   input[id="green"]:checked
     & ~ div [for="green"]
-      border 1px solid var(--softBlue)
+      border 2px solid var(--softBlue)
       transform scale(.85)
   &-option
-    height 50px
-    width 50px
+    height 40px
+    width 40px
     margin-right 2em
     border-radius .5em
     transition .1s all
@@ -34,15 +34,12 @@
     &.is-red
       color var(--red)
       background var(--red)
-      box-shadow 0 5px 10px -5px currentColor
     &.is-amber
       color var(--amber)
       background var(--amber)
-      box-shadow 0 5px 10px -5px currentColor
     &.is-green
       color var(--green)
       background var(--green)
-      box-shadow 0 5px 10px -5px currentColor
     &.is-selected
       border 1px solid var(--softBlue)
       transform scale(.85)
