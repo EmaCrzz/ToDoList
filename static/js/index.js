@@ -21,6 +21,14 @@ function validateForm(event) {
   if (!$dateFinish.value) {
     $errorDateFinish.classList.add("entry-task-error");
     validForm = false
+  } else {
+    var inputDate = new Date($dateFinish.value).getTime();
+    var now = new Date().getTime();
+    if (inputDate < now) {
+      $errorDateFinish.classList.add("entry-task-error");
+      $errorDateFinish.innerHTML = 'Select date greater than now'
+      validForm = false
+    }
   }
 
   let checkedColor = false
