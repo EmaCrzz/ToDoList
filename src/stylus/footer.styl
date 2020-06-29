@@ -1,0 +1,78 @@
+.footer
+  background: var(--veryDarkBlue)
+  .u-h4
+    color white
+  a
+    color white
+    text-decoration: none
+  &-logo
+    display inline-flex
+    height 55px
+    width 230px
+    background url('../images/logo_transparent.png') no-repeat center
+    background-size contain
+  &-menu
+    margin-top 2em
+    a
+      display block
+      text-transform: uppercase
+      letter-spacing: 1px
+      padding 1em
+  &-social
+    margin-top 2em
+    text-align: center
+    .email
+      display: flex
+      text-decoration: underline
+      text-decoration-color: white
+      cursor pointer
+      justify-content: center
+      align-items: center
+      margin-bottom: .7em
+      img
+        height 20px
+        margin-right: .5rem
+    a
+      width 40px
+      height 40px
+      display inline-block
+      padding-right: .3em
+      &:last-child
+        padding-right: 0
+    .twitter
+      background: url('../icons/icon-twitter.svg') no-repeat center
+    .instagram
+      background: url('../icons/icon-instagram.svg') no-repeat center
+    .linkedin
+      background: url('../icons/icon-linkedin.svg') no-repeat center
+    .github
+      background: url('../icons/icon-github.svg') no-repeat center
+  &-tooltip
+    position relative
+    display inline-block
+    .tooltiptext
+      visibility hidden
+      width 140px
+      background-color #555
+      color #fff
+      text-align center
+      border-radius 6px
+      padding 5px
+      position absolute
+      z-index 1
+      bottom 95%
+      left 50%
+      margin-left -75px
+      opacity 0
+      transition opacity 0.3s
+  &:hover 
+    .tooltiptext
+      visibility visible
+      opacity 1
+  @media screen and (min-width: 1024px)
+    &-content
+      display flex
+      justify-content: space-between
+    &-primary
+      max-width 500px
+  

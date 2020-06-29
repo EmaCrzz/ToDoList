@@ -124,6 +124,7 @@
   overflow: auto;
   padding: 0;
   list-style: none;
+  height: calc(100vh - 356px);
 }
 .tasks-container.is-empty {
   display: flex;
@@ -179,6 +180,103 @@
 .tasks-finish-timer {
   margin-top: 0 !important;
   display: block;
+}
+.footer {
+  background: var(--veryDarkBlue);
+}
+.footer .u-h4 {
+  color: #fff;
+}
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+.footer-logo {
+  display: inline-flex;
+  height: 55px;
+  width: 230px;
+  background: url("../images/logo_transparent.png") no-repeat center;
+  background-size: contain;
+}
+.footer-menu {
+  margin-top: 2em;
+}
+.footer-menu a {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 1em;
+}
+.footer-social {
+  margin-top: 2em;
+  text-align: center;
+}
+.footer-social .email {
+  display: flex;
+  text-decoration: underline;
+  text-decoration-color: #fff;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.7em;
+}
+.footer-social .email img {
+  height: 20px;
+  margin-right: 0.5rem;
+}
+.footer-social a {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  padding-right: 0.3em;
+}
+.footer-social a:last-child {
+  padding-right: 0;
+}
+.footer-social .twitter {
+  background: url("../icons/icon-twitter.svg") no-repeat center;
+}
+.footer-social .instagram {
+  background: url("../icons/icon-instagram.svg") no-repeat center;
+}
+.footer-social .linkedin {
+  background: url("../icons/icon-linkedin.svg") no-repeat center;
+}
+.footer-social .github {
+  background: url("../icons/icon-github.svg") no-repeat center;
+}
+.footer-tooltip {
+  position: relative;
+  display: inline-block;
+}
+.footer-tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 95%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.footer:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+@media screen and (min-width: 1024px) {
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer-primary {
+    max-width: 500px;
+  }
 }
 :root {
   --softBlue: #5368df;

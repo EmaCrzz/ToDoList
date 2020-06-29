@@ -47,7 +47,8 @@ class Task {
   create() {
     const htmlItem = this.newTaskItem();
     this.countDown();
-    this.element.insertAdjacentHTML("afterend", htmlItem);
+    this.element.classList.remove("is-empty");
+    this.element.insertAdjacentHTML("afterbegin", htmlItem);
     this.addDeleteFunction();
   }
 

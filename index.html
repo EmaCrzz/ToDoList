@@ -14,7 +14,7 @@
 <body>
   <header class="header">
     <div class="u-wrapper">
-      <h1 class="u-h3">To-Do List by <a href="https://github.com/EmaCrzz/" target="_blank">EmaCrzz</a></h1>
+      <h1 class="u-h3">To-Do List</h1>
     </div>
   </header>
 
@@ -46,98 +46,46 @@
 
   <main class="tasks">
     <div class="u-wrapper-md">
-      <ul id="tasks-container" class="tasks-container">
-        <!-- <span class="u-h4">Create a task</span> -->
-        <!-- <li class="tasks-item is-red">
-          <div class="tasks-info">
-            <div>
-              <span class="tasks-name u-h5">Learning HTML</span>
-              <span class="tasks-created">Created 28/06/2020</span>
-            </div>
-            <div>
-              <span class="tasks-finish-label">Finish</span>
-              <span class="tasks-finish-timer u-h5">5:06:08 15:12</span>
-            </div>
-          </div>
-          <button class="u-button with-icon is-outlined is-small">
-            <img src="./static/icons/cerrar.svg" alt="">
-          </button>
-        </li>
-        <li class="tasks-item is-green">
-          <div class="tasks-info">
-            <div>
-              <span class="tasks-name u-h5">Learning CSS</span>
-              <span class="tasks-created">Created 28/06/2020</span>
-            </div>
-            <div>
-              <span class="tasks-finish-label">Finish</span>
-              <span class="tasks-finish-timer u-h5">5:06:08 15:12</span>
-            </div>
-          </div>
-          <button class="u-button with-icon is-outlined is-small">
-            <img src="./static/icons/cerrar.svg" alt="">
-          </button>
-        </li>
-        <li class="tasks-item is-amber">
-          <div class="tasks-info">
-            <div>
-              <span class="tasks-name u-h5">Learning JS</span>
-              <span class="tasks-created">Created 28/06/2020</span>
-            </div>
-            <div>
-              <span class="tasks-finish-label">Finish</span>
-              <span class="tasks-finish-timer u-h5">5:06:08 15:12</span>
-            </div>
-          </div>
-          <button class="u-button with-icon is-outlined is-small">
-            <img src="./static/icons/cerrar.svg" alt="">
-          </button>
-        </li>
-        <li class="tasks-item is-red">
-          <div class="tasks-info">
-            <div>
-              <span class="tasks-name u-h5">Learning HTML</span>
-              <span class="tasks-created">Created 28/06/2020</span>
-            </div>
-            <div>
-              <span class="tasks-finish-label">Finish</span>
-              <span class="tasks-finish-timer u-h5">5:06:08 15:12</span>
-            </div>
-          </div>
-          <button class="u-button with-icon is-outlined is-small">
-            <img src="./static/icons/cerrar.svg" alt="">
-          </button>
-        </li>
-        <li class="tasks-item is-amber">
-          <div class="tasks-info">
-            <div>
-              <span class="tasks-name u-h5">Learning JS</span>
-              <span class="tasks-created">Created 28/06/2020</span>
-            </div>
-            <div>
-              <span class="tasks-finish-label">Finish</span>
-              <span class="tasks-finish-timer u-h5">5:06:08 15:12</span>
-            </div>
-          </div>
-          <button class="u-button with-icon is-outlined is-small">
-            <img src="./static/icons/cerrar.svg" alt="">
-          </button>
-        </li> -->
+      <ul id="tasks-container" class="tasks-container is-empty">
+        <!-- <span id="tasks-container-empty" class="u-h4">Create a task</span> -->
       </ul>
     </div>
   </main>
 
-  <footer class="footer is-hidden">
+  <footer id="contact" class="footer">
     <div class="u-wrapper">
-      Iconos diseñados por <a href="https://www.flaticon.es/autores/pixel-perfect" title="Pixel perfect">Pixel
-        perfect</a>
-      from <a href="https://www.flaticon.es/" title="Flaticon"> www.flaticon.es</a>
-      Iconos diseñados por <a href="https://www.flaticon.es/autores/becris" title="Becris">Becris</a> from <a
-        href="https://www.flaticon.es/" title="Flaticon"> www.flaticon.es</a>
+      <hr>
+      <div class="footer-content">
+        <div class="footer-primary">
+          <h4 class="u-h4">Get in touch.</h4>
+          <p class="u-p">
+            Send a general message or details of a project you'd like me to be a part of and
+            I'll get back to you as soon as possible.
+          </p>
+          <a href="https://emavillanueva-d1238.web.app/" target="_blank" class="footer-logo"></a>
+        </div>
+        <div class="footer-social">
+          <div class="footer-tooltip">
+            <span class="tooltiptext" id="myTooltip">Copy email</span>
+            <div class="u-p email" id="email">
+              <img src="./static/icons/icon-send-email.png" alt="send email">
+              <pre id="textoACopiar"><code>ema_villanueva@hotmail.com</code></pre>
+            </div>
+          </div>
+          <div>
+            <a href="https://github.com/EmaCrzz/" target="_blank" class="github"></a>
+            <a href="https://www.linkedin.com/in/emanuel-villanueva-713035173/" target="_blank" class="linkedin"></a>
+            <a href="https://www.instagram.com/ema.villanueva_crzz/" target="_blank" class="instagram"></a>
+            <a href="https://twitter.com/Ema15crzz" target="_blank" class="twitter"></a>
+          </div>
+        </div>
+      </div>
     </div>
   </footer>
 
+
   <script src="./static/js/index.js" type="application/javascript"></script>
+  <script src="./static/js/copy-email.js" type="application/javascript"></script>
   <script src="./static/js/tasks.js" type="application/javascript"></script>
 
 </body>
