@@ -1,4 +1,4 @@
-function myFunction(event) {
+function validateForm(event) {
   event.preventDefault()
   var validForm = true
   var $errorName = document.getElementById("name-task-error");
@@ -25,15 +25,27 @@ function myFunction(event) {
 
   let checkedColor = false
   $colors.forEach(ch => {
-    if(ch.checked) checkedColor = true
+    if(ch.checked) {
+      checkedColor = ch.value;
+    }
   })
   if(!checkedColor) {
     $errorColor.classList.add("entry-task-error");
     validForm = false
   }
 
-  if(validForm) console.log('el formulario es valido');
+  if(validForm) {
+    var $tasksContainer = document.getElementById("tasks-container");
+    let task = new Task({
+      color: checkedColor,
+      name: $name.value,
+      dateFinish: $dateFinish.value,
+      htmlElement: $tasksContainer
+    });
+    task.create();
+  }
 }
 var myForm = document.getElementById("entry-task");
-myForm.addEventListener("submit", myFunction, false);
+myForm.addEventListener("submit", validateForm, false);
+
 
