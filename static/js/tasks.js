@@ -9,15 +9,15 @@ const optionsDate = {
 
 class Tasks {
   constructor(props) {
-    this.element = props.htmlElement
-    this.initialTasks = false
+    this.element = props.htmlElement;
+    this.initialTasks = false;
 
-    this.init()
+    this.init();
   }
 
   init() {
-    this.initialTasks = Boolean(window.localStorage.getItem("tasks"));
-    if (this.initialTasks) {
+    var initialTasks = Boolean(window.localStorage.getItem("tasks"));
+    if (initialTasks) {
       let localStorageTasks = JSON.parse(window.localStorage.getItem("tasks"));
       localStorageTasks.map(task => {
         this.element.classList.remove("is-empty");
@@ -26,25 +26,31 @@ class Tasks {
         var interval = this.countDown(task);
         this.addDeleteFunction({ ...task, interval });
       });
+    } else {
+      this.createHtmlEmpty();
     }
   }
 
   create(props) {
-    if (this.initialTasks) {
-      this.element.classList.remove("is-empty");
+    var initialTasks = Boolean(window.localStorage.getItem("tasks"));
+    this.element.classList.remove("is-empty");
+    let localStorageTasks = [];
+    if (initialTasks) {
+      localStorageTasks = JSON.parse(window.localStorage.getItem("tasks"));
+      localStorageTasks.push(props);
+    } else {
+      localStorageTasks.push(props);
+      document.getElementById("tasks-container-empty").remove();
     }
+    window.localStorage.setItem("tasks", JSON.stringify(localStorageTasks));
     const htmlItem = this.newTaskItem(props);
     this.element.insertAdjacentHTML("afterbegin", htmlItem);
     var interval = this.countDown(props);
     this.addDeleteFunction({ ...props, interval });
-    let localStorageTasks = JSON.parse(window.localStorage.getItem("tasks"));
-    localStorageTasks.push(props)
-    window.localStorage.setItem("tasks", JSON.stringify(localStorageTasks));
   }
 
   newTaskItem({ color, name, dateInit, dateFinish, id }) {
-    return `
-      <li class="tasks-item is-${color}">
+    return `<li class="tasks-item is-${color}">
         <div class="tasks-info">
           <div>
             <span class="tasks-name u-h4">${name}</span>
@@ -62,8 +68,7 @@ class Tasks {
         <button id="cancel${id}" class="u-button with-icon is-outlined is-small">
           <img src="./static/icons/cerrar.svg" alt="">
         </button>
-      </li>
-    `;
+      </li>`;
   }
 
   countDown({ id, dateFinish }) {
@@ -93,10 +98,8 @@ class Tasks {
   addDeleteFunction({ id, interval }) {
     const $buttonCancel = document.getElementById(`cancel${id}`);
     $buttonCancel.addEventListener("click", element => {
-      let localStorageTasks = JSON.parse(
-        window.localStorage.getItem("tasks")
-      )
-      let tasks = localStorageTasks.filter(task => task.id !== id)
+      let localStorageTasks = JSON.parse(window.localStorage.getItem("tasks"));
+      let tasks = localStorageTasks.filter(task => task.id !== id);
       if (tasks.length === 0) {
         window.localStorage.removeItem("tasks");
       } else {
@@ -104,6 +107,15 @@ class Tasks {
       }
       clearInterval(interval);
       $buttonCancel.parentElement.remove();
+      if (!this.element.hasChildNodes()) {
+        this.element.classList.add("is-empty");
+        this.createHtmlEmpty()
+      };
     });
+  }
+
+  createHtmlEmpty() {
+    var htmlEmpty = `<span id="tasks-container-empty" class="u-h4">Create a task</span>`;
+    this.element.insertAdjacentHTML("afterbegin", htmlEmpty);
   }
 }
