@@ -43,17 +43,21 @@ function validateForm(event) {
   }
 
   if(validForm) {
-    var $tasksContainer = document.getElementById("tasks-container");
-    let task = new Task({
+    tasks.create({
+      id: "_" + Math.random().toString(36).substr(2, 9),
       color: checkedColor,
       name: $name.value,
       dateFinish: $dateFinish.value,
-      htmlElement: $tasksContainer
+      dateInit: new Date(),
     });
-    task.create();
   }
 }
+
+var $tasksContainer = document.getElementById("tasks-container");
 var myForm = document.getElementById("entry-task");
+
+let tasks = new Tasks({ htmlElement: $tasksContainer });
+
 myForm.addEventListener("submit", validateForm, false);
 
 
