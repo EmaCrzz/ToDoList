@@ -81,7 +81,7 @@ class Tasks {
 
       if (distance < 0) {
         clearInterval(x);
-        document.getElementById(`timer${id}`).innerHTML = "EXPIRED";
+        document.getElementById(`timer${id}`).innerHTML = "FINISHED";
       } else {
         document.getElementById(`timer${id}`).innerHTML =
           days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
