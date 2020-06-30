@@ -7,8 +7,8 @@
     text-decoration: none
   &-logo
     display inline-flex
-    height 55px
-    width 230px
+    height 55px !important
+    width 230px !important
     background url('../images/logo_transparent.png') no-repeat center
     background-size contain
   &-menu
@@ -75,4 +75,7 @@
       justify-content: space-between
     &-primary
       max-width 500px
-  
+  @media screen and (max-width: 460px)
+    a
+      width 30px
+      height 30px

@@ -65,6 +65,7 @@ a
 .u-wrapper-md
   @extends .u-wrapper
   max-width 800px
+
 .is-hidden
   display none
 
@@ -115,3 +116,18 @@ a
     opacity .8
   &:active
     transform scale(.9)
+
+@media screen and (max-width: 460px)
+  .u-wrapper-md
+    padding 0 .5em
+    min-width 320px
+  .u-h4
+    font-size 1em
+  .u-button
+    &.is-outlined
+      padding .6em
+      border none
+    &.is-small
+      img
+        width .9em
+        height  .9em
